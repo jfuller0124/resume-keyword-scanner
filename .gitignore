@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Zip / CRX builds
+*.zip
+*.crx
+
+# Editor configs
+.vscode/
+.idea/
+
+# Node (if added later)
+node_modules/
+
+# Python (if OCR tooling evolves)
+__pycache__/
+.env
