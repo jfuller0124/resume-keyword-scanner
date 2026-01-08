@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resume Keyword Scanner (App)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <h1>Resume Keyword Scanner</h1>
+
+      <!-- RESUME -->
+      <section class="card">
+        <h2>Your Resume</h2>
+
+        <textarea
+          id="resumeText"
+          placeholder="Paste your resume text here (or upload PDF below)..."
+        ></textarea>
+
+        <div class="row">
+          <button id="saveResume" class="primary">Save Resume</button>
+          <button id="clearResume" class="ghost">Clear</button>
+        </div>
+
+        <div class="uploadRow">
+          <input id="resumeFile" type="file" accept=".pdf" />
+          <button id="loadResumeFile" class="ghost">Load PDF (Text)</button>
+        </div>
+
+        <div class="ocrRow">
+          <input
+            id="apiUrl"
+            type="text"
+            placeholder="OCR API URL (http://127.0.0.1:8000 or https://your-api.onrender.com)"
+          />
+          <button id="ocrExtract" class="primary">OCR Extract</button>
+        </div>
+
+        <p class="hint" id="resumeStatus"></p>
+      </section>
+
+      <!-- JOB DESCRIPTION -->
+      <section class="card">
+        <h2>Job Description</h2>
+
+        <textarea
+          id="jobText"
+          placeholder="Paste the job description here..."
+        ></textarea>
+
+        <div class="row">
+          <button id="analyzePasted" class="primary">Analyze JD</button>
+          <button id="clearJob" class="ghost">Clear JD</button>
+        </div>
+
+        <p class="hint" id="scanStatus"></p>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="card">
+        <h2>Results</h2>
+
+        <div class="score">
+          <div class="scoreLabel">Match</div>
+          <div class="scoreValue" id="matchScore">—</div>
+        </div>
+
+        <div class="twoCol">
+          <div>
+            <h3>Missing (Top)</h3>
+            <ul id="missingList" class="list"></ul>
+            <button id="copyMissing" class="ghost small">Copy missing</button>
+          </div>
+
+          <div>
+            <h3>Found (Top)</h3>
+            <ul id="foundList" class="list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span class="muted">App Window • Stays open while you browse</span>
+      </footer>
+    </div>
+
+    <!-- MV3 CSP: NO INLINE SCRIPTS -->
+    <script src="utils.js"></script>
+    <script type="module" src="pdf_loader.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

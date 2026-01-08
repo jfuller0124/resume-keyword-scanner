@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resume Keyword Scanner Debug</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <h1>Debug Page</h1>
+      <p class="hint">Checks whether PDF.js (ESM) loads under extension CSP.</p>
+
+      <div class="card">
+        <div class="row">
+          <button id="check" class="primary">Check PDF.js</button>
+        </div>
+
+        <p class="hint" id="out">Loading…</p>
+
+        <div class="card" style="margin-top:10px;">
+          <p class="hint" id="details">—</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NO INLINE SCRIPTS (CSP). Load external module instead -->
+    <script type="module" src="debug.js"></script>
+  </body>
+</html>
